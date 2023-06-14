@@ -10,7 +10,7 @@ const accountsFixture = require("./fixtures/accounts.fixture");
 const authorsFixture = require("./fixtures/authors.fixture");
 const booksFixture = require("./fixtures/books.fixture");
 
-describe("Accounts Page", () => {
+describe.only("Accounts Page", () => {
   let accounts;
   let authors;
   let books;
