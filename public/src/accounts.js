@@ -40,7 +40,7 @@ function getTotalNumberOfBorrows({id}, books) {
 //cannot return bookList directly
 function getBooksPossessedByAccount({id:newId}, books, authors) {
   let bookList = books.filter(book=>book.borrows[0].id===newId && book.borrows[0].returned === false);
-  bookList.forEach((bookObj)=>bookObj['author'] = authors.find((author)=>author.id===bookObj.authorId))
+  bookList.map((bookObj)=>bookObj['author'] = authors.find((author)=>author.id===bookObj.authorId))
   //console.log(bookList);
   return bookList;
 }
