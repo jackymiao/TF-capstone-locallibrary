@@ -11,7 +11,7 @@ const {
 const authorsFixture = require("./fixtures/authors.fixture");
 const booksFixture = require("./fixtures/books.fixture");
 
-describe("Home Page", () => {
+describe.only("Home Page", () => {
   let authors;
   let books;
 

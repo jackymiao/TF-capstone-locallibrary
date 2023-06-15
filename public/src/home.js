@@ -58,10 +58,9 @@ console.log(bookCountList);
 const newList = [];
 for(let i in bookCountList){
   const authorName = authors.find((author)=>author.id===Number(i));
-  
   newList.push({"name":`${authorName.name.first} ${authorName.name.last}`, "count":bookCountList[i]})
 }
-newList.sort((nameA, nameB)=>a.count > b.count?-1:1);
+newList.sort((nameA, nameB)=>nameA.count > nameB.count?-1:1);
 return newList.slice(0,5);
 }
 
