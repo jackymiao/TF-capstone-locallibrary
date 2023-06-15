@@ -1,3 +1,8 @@
+//helper function
+function shorterTheArray(arr, length=1){
+  return arr.slice(0,length);
+}
+
 function findAuthorById(authors, id) {
   return authors.find((author)=>author.id===id)
 }
@@ -27,11 +32,12 @@ function partitionBooksByBorrowedStatus(books) {
 //   return borrowersAccount.slice(0,10);
 // }
 function getBorrowersForBook({borrows}, accounts=[]) {
-  return borrows.map(({id,returned})=>{
+  const newBorrowList = borrows.map(({id,returned})=>{
     const foundAccount = accounts.find(account=>account.id===id);
     const newElement = {returned,...foundAccount};
     return newElement;
-}).slice(0,10)
+});
+  return shorterTheArray(newBorrowList, 10);
 }
 
 module.exports = {
